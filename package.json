@@ -1,0 +1,14 @@
+{
+  "name": "forjix-workspace",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix frontend\"",
+    "start:backend": "npm start --prefix backend",
+    "start:frontend": "npm start --prefix frontend",
+    "build": "npm run build --prefix frontend",
+    "test": "npm test --prefix frontend -- --watchAll=false"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

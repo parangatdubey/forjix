@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: #020203;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(79, 70, 229, 0.12), transparent 32%),
+      #020203;
+    color: #d4d4d8;
+    font-family: "Segoe UI", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: enter 0.8s ease-out both;
+  }
+
+  .fade-in {
+    --tw-enter-opacity: 0;
+  }
+
+  .zoom-in {
+    --tw-enter-scale: 0.98;
+  }
+
+  .slide-in-from-bottom-12 {
+    --tw-enter-translate-y: 3rem;
+  }
+
+  .slide-in-from-top-6 {
+    --tw-enter-translate-y: -1.5rem;
+  }
+
+  .slide-in-from-right-16 {
+    --tw-enter-translate-x: 4rem;
+  }
+
+  .animate-in.fade-in,
+  .animate-in.zoom-in,
+  .animate-in.slide-in-from-bottom-12,
+  .animate-in.slide-in-from-top-6,
+  .animate-in.slide-in-from-right-16 {
+    animation: enter-composed 0.8s ease-out both;
+  }
+
+  .animate-shake {
+    animation: shake 0.45s ease-in-out;
+  }
+
+  @keyframes enter-composed {
+    from {
+      opacity: var(--tw-enter-opacity, 0);
+      transform:
+        translate3d(
+          var(--tw-enter-translate-x, 0),
+          var(--tw-enter-translate-y, 0.75rem),
+          0
+        )
+        scale(var(--tw-enter-scale, 0.98));
+    }
+
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+  }
+}
